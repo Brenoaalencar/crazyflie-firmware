@@ -14,4 +14,10 @@ const float I_yy = 16.0e-6; // kg.m^2
 const float I_zz = 29.0e-6; // kg.m^2
 const float l = 33.0e-3;    // m
 
+//NOVOS PARAMETROS
+const float a2 = 0.0000001*1.341;
+const float a1 = 0.0000000001*2.956;
+const float fl = 0.00000001*1.768;
+
+
 #endif

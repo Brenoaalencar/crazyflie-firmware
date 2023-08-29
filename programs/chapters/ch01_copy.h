@@ -15,7 +15,7 @@ PwmOut motor3(MOTOR3);
 PwmOut motor4(MOTOR4);
 
 int vel = 80;
-float p = 0.60;
+float p = 1.0;
 // Main program
 int main()
 {
@@ -23,25 +23,25 @@ int main()
     led3=1;
     wait(5);
     led3=0;
-    motor1.period(0.0125);
-    motor2.period(0.0125);
-    motor3.period(0.0125);
+    //motor1.period(0.0125);
+    //motor2.period(0.0125);
+    //motor3.period(0.0125);
     motor4.period(0.0125);
 
     
     // Turn on red LEDs indicating motors are armed
     led1=1;
     led2=1;
-    motor1.write(p);
-    motor2.write(p);
-    motor3.write(p);
+    //motor1.write(p);
+    //motor2.write(p);
+    //motor3.write(p);
     motor4.write(p);
 
     wait(10);
 
-    motor1.write(0);
-    motor2.write(0);
-    motor3.write(0);
+    //motor1.write(0);
+    //motor2.write(0);
+    //motor3.write(0);
     motor4.write(0);
     // Test all motors with different frequencies (to make different noises)
     /*for(float i = 400; i<=1000;i+=50){
