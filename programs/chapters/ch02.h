@@ -2,6 +2,7 @@
 #include "crazyflie.h"
 
 // Define motor as PWM output object
+//Grupo Breno, Lucca e Richetti
 PwmOut motor4(MOTOR4) ;
 PwmOut motor3(MOTOR3) ;
 PwmOut motor2(MOTOR2) ;
