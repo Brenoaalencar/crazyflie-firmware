@@ -17,7 +17,7 @@ const float l = 33.0e-3;    // m
 //NOVOS PARAMETROS
 const float a2 = 0.0000001*1.341;
 const float a1 = 0.0000000001*2.956;
-const float fl = 0.00000001*1.768;
-
+const float kl = 0.00000001*1.768;
+const float kd = 0.0000000001*1.553;
 
 #endif
