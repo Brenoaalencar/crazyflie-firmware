@@ -52,11 +52,11 @@ int main ()
     motor3.period (1.0/500.0) ;
     motor4.period (1.0/500.0) ;
     // Turn on motor with 1.000 rad /s for 0.5s
-    actuate(0.7*m*g,0,0,0);
+    actuate(1*m*g,0,0,0);
     wait(3);
-    actuate(0.7*m*g,0,0.0015,0);
-    wait(1);
-    actuate(0.7*m*g,0,0,0);
+    //actuate(0.7*m*g,0,0.0015,0);
+    //wait(1);
+    //actuate(0.7*m*g,0,0,0);
     //Atuar motor com 50% mg com arrasto total(N) e torque zero.
     wait(2);
     // Turn off motor
