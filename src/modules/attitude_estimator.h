@@ -17,6 +17,10 @@ public:
   float phi, theta, psi;
   // Angular velocities ( rad /s)
   float p, q, r;
+  //valores filtrados
+  float phi_filtro, phi_filtro_ant;
+  //valores para atitude pelo giroscópio
+  float phi_g, phi_g_ant, p_g;
 
 private:
   // IMU sensor object
