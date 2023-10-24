@@ -20,7 +20,7 @@ public:
   //valores filtrados
   float phi_filtro, phi_filtro_ant;
   //valores para atitude pelo giroscópio
-  float phi_g, phi_g_ant, p_g;
+  float phi_g, phi_g_ant, p_g,p_bias,q_bias,r_bias;
 
 private:
   // IMU sensor object
