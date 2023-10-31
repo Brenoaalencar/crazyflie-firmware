@@ -11,7 +11,7 @@ int main ()
 {
     wait(2);
     //Mixer com 50% da força total e 0 de torque
-    mixer.actuate(0.7*m*g,0,0,0);
+    mixer.actuate(0,0,0,-0.001);
     wait(2);
     //Desliga os motores
     mixer.actuate(0,0,0,0);

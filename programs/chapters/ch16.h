@@ -1,10 +1,11 @@
+#include "attitude_controller.h"
+#include "attitude_estimator.h"
 #include "crazyflie.h"
 #include "mbed.h"
 #include "mixer.h"
-#include "attitude_estimator.h"
-#include "attitude_controller.h"
 
-//Drones 2023.2
+
+// Drones 2023.2
 // Crazyflie controller objects
 Mixer mixer;
 AttitudeEstimator att_est;
@@ -22,7 +23,7 @@ void callback() { flag = true; }
 // Main program
 int main() {
   // Set references
-  float f_t = 0.5 * m * g;
+  float f_t = 0.3*m*g;
   float phi_r = 0.0;
   float theta_r = 0.0;
   float psi_r = 0.0;
@@ -44,8 +45,8 @@ int main() {
     }
   }
   // Disarm motors and end program
-   mixer.actuate(0,0,0,0);
+  mixer.actuate(0, 0, 0, 0);
   // mixer.disarm() ;
-  while (true)
+  while (true){}
     ;
 }

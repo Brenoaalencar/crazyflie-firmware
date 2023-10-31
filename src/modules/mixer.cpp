@@ -27,11 +27,23 @@ void Mixer::actuate (float f_t, float tau_phi, float tau_theta, float tau_psi)
 
 //Converte força total de arrasto (N) e torques (N.m) para velocidade angular
 void Mixer::mixer(float f_t, float tau_phi, float tau_theta, float tau_psi)
-{
-    omega_1= sqrt(f_t/(4*kl) - tau_phi/(4*kl*l) - tau_theta/(4*kl*l) - tau_psi/(4*kd));
-    omega_2= sqrt(f_t/(4*kl) - tau_phi/(4*kl*l) + tau_theta/(4*kl*l) + tau_psi/(4*kd));
-    omega_3= sqrt(f_t/(4*kl) + tau_phi/(4*kl*l) + tau_theta/(4*kl*l) - tau_psi/(4*kd));
-    omega_4= sqrt(f_t/(4*kl) + tau_phi/(4*kl*l) - tau_theta/(4*kl*l) + tau_psi/(4*kd));
+{  float conta_1=f_t/(4*kl) - tau_phi/(4*kl*l) - tau_theta/(4*kl*l) - tau_psi/(4*kd);
+   if(conta_1<0){omega_1=0;}else{omega_1= sqrt(conta_1);}
+   float conta_2=f_t/(4*kl) - tau_phi/(4*kl*l) + tau_theta/(4*kl*l) + tau_psi/(4*kd);
+   if(conta_2<0){omega_2=0;}else{omega_2= sqrt(conta_2);}
+   float conta_3=f_t/(4*kl) + tau_phi/(4*kl*l) + tau_theta/(4*kl*l) - tau_psi/(4*kd);
+   if(conta_3<0){omega_3=0;}else{omega_3= sqrt(conta_3);}
+   float conta_4=f_t/(4*kl) + tau_phi/(4*kl*l) - tau_theta/(4*kl*l) + tau_psi/(4*kd);
+    if(conta_4<0){omega_4=0;}else{omega_4= sqrt(conta_4);}
+    //omega_2= sqrt();
+    //omega_3= sqrt();
+    //omega_4= sqrt();
+
+    //Correção da Giu
+    //if(f_t/(4*kl) - tau_phi/(4*kl*l) - tau_theta/(4*kl*l) - tau_psi/(4*kd)<0){omega_1=0;}
+    //if(f_t/(4*kl) - tau_phi/(4*kl*l) + tau_theta/(4*kl*l) + tau_psi/(4*kd)<0){omega_2=0;}
+    //if(f_t/(4*kl) + tau_phi/(4*kl*l) + tau_theta/(4*kl*l) - tau_psi/(4*kd)<0){omega_3=0;}
+    //if(f_t/(4*kl) + tau_phi/(4*kl*l) - tau_theta/(4*kl*l) + tau_psi/(4*kd)<0){omega_4=0;}
 }
 
 // Converts desired angular velocity ( rad/s) to PWM signal (%)
