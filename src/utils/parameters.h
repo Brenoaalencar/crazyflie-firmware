@@ -7,6 +7,7 @@
 const float pi = 3.1416;
 const float g = 9.81;       // m/s^2
 const float dt = 0.002;         //ms
+const float dt_range = 0.050; 
 
 // Quadcopter dimensions
 const float m = 30.0e-3;    // kg
@@ -42,5 +43,11 @@ const float wn_psi = 4/(zeta_psi*ts_psi);
 //const float kp_psi = wn_psi*wn_psi;
 const float kp_psi = pow(wn_psi,2);
 const float kd_psi = 2*zeta_psi*wn_psi;
+
+//Controlador vertical
+const float wc_cv=10;
+const float zeta_cv=sqrt(2)/2;
+const float l1 = wc_cv*wc_cv;
+const float l2= 2*zeta_cv*wc_cv;
 
 #endif
