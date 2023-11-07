@@ -15,5 +15,9 @@
 // Modules
 #include "mixer.h"
 #include "attitude_estimator.h"
+#include "attitude_controller.h"
 #include "vertical_estimator.h"
+#include "vertical_controller.h"
+#include "horizontal_estimator.h"
+#include "horizontal_controller.h"
 #endif

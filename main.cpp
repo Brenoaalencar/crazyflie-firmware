@@ -9,5 +9,12 @@
 // Chapters
 //#include "programs/chapters/ch01_copy.h"
 //#include "programs/chapters/ch09.h"
+//Teste de controlador de atitude
 //#include "programs/chapters/ch16.h"
-#include "programs/chapters/ch18.h"
+//Teste de estimador vertical
+//#include "programs/chapters/ch18.h"
+//Teste de controlador vertical
+//#include "programs/chapters/ch20.h"
+//Teste de estimador horizontal
+//#include "programs/chapters/ch22.h"
+#include "programs/chapters/ch24.h"

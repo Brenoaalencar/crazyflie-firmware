@@ -24,10 +24,11 @@ const float kd = 0.0000000001*1.553;
 const float wc = 1.0;
 const float alfa = (wc*dt)/(1+wc*dt);
 
-const float os = 0.05;
+//Controlador de atitude
+const float os = 0.005;
 const float ts_phi = 0.3;
 //const float zeta_phi = (abs(log(os))/(sqrt((log(os))*(log(os)) + pi*pi )));
-const float zeta_phi = (abs(log(os))/(sqrt(pow(log(os),2) + pow(pi,2))));
+const float zeta_phi = abs(log(os))/sqrt(pow(log(os),2) + pow(pi,2));
 const float wn_phi = 4/(zeta_phi*ts_phi);
 //const float kp_phi = wn_phi*wn_phi;
 const float kp_phi = pow(wn_phi,2);
@@ -49,5 +50,23 @@ const float wc_cv=10;
 const float zeta_cv=sqrt(2)/2;
 const float l1 = wc_cv*wc_cv;
 const float l2= 2*zeta_cv*wc_cv;
+const float kp_z=5.8567;
+const float kd_z=3.4225;
+
+//Controlador horizontal
+const float gamma = 42.0*pi/180.0;
+const float W = 420.0;
+const float sigma = 2.0*tan(gamma/2.0)/(W*dt);
+const float wc_ch=50.0;
+const float l_ch = wc_ch;
+
+
+const float ts_h = 2;
+//const float zeta_phi = (abs(log(os))/(sqrt((log(os))*(log(os)) + pi*pi )));
+const float zeta_h = abs(log(os))/sqrt(pow(log(os),2) + pow(pi,2));
+const float wn_h = 4/(zeta_phi*ts_phi);
+//const float kp_phi = wn_phi*wn_phi;
+const float kp_h = pow(wn_phi,2);
+const float kd_h = 2*zeta_phi*wn_phi;
 
 #endif
