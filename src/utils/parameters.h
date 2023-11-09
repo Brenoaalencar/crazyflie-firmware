@@ -64,9 +64,9 @@ const float l_ch = wc_ch;
 const float ts_h = 2;
 //const float zeta_phi = (abs(log(os))/(sqrt((log(os))*(log(os)) + pi*pi )));
 const float zeta_h = abs(log(os))/sqrt(pow(log(os),2) + pow(pi,2));
-const float wn_h = 4/(zeta_phi*ts_phi);
+const float wn_h = 4/(zeta_h*ts_h);
 //const float kp_phi = wn_phi*wn_phi;
-const float kp_h = pow(wn_phi,2);
-const float kd_h = 2*zeta_phi*wn_phi;
+const float kp_h = pow(wn_h,2);
+const float kd_h = 2*zeta_h*wn_h;
 
 #endif
