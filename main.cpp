@@ -17,4 +17,6 @@
 //#include "programs/chapters/ch20.h"
 //Teste de estimador horizontal
 //#include "programs/chapters/ch22.h"
-#include "programs/chapters/ch24.h"
+//#include "programs/chapters/ch24.h"
+//Criar trajetória
+#include "programs/chapters/ch25.h"
