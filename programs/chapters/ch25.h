@@ -22,9 +22,20 @@ void callback_range() { flag_range = true; }
 
 Timer tim;
 float t;
+float t_d;
+float t_v;
+float t_p;
+float h;
+float d;
 
 // Main program
 int main() {
+  // Set times and distances
+  t_d = 10;
+  t_v = 20;
+  t_p = 10;
+  h = 0.5;
+  d = 2;
   // Set references
   float z_r = 0.4;
   float x_r = 0.0;
@@ -47,13 +58,26 @@ int main() {
     if (flag) {
       flag = false;
         t = tim.read();
-        z_r = t/20;
-        if (t > 10)
+        if (t < t_d)
         {
-            z_r = 0.5;
+            z_r = (h/t_d)*t;
             x_r = 0.5;
             y_r = -0.5;
         }
+        else if(t < t_d+t_v){
+            z_r = h;
+            x_r = (d/t_v)*t - (d/t_v)*t_d + 0.5;
+        }
+        else if(t < t_d+t_v+t_p){
+            z_r = -(h/t_p)*t + (h/t_p)*(t_d+t_v+t_p);
+            x_r = d + 0.5;
+        }
+        else{
+            z_r = 0;
+            x_r = d + 0.5;
+            mixer.actuate(0,0,0,0);
+        }
+
       att_est.estimate();
       ver_est.predict(ver_cont.f_t);
       if (flag_range) {
